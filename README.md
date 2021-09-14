@@ -44,7 +44,7 @@ L'inserimento dei dati va fatto dal file ./app/src/main.c inserendo il numero di
 Dalla directory principale:
 
 ```bash
-cd build && && rm -r * && cmake.. && make && cd ..
+cd build && rm -r * && cmake.. && make && cd ..
 ```
 
 ---
