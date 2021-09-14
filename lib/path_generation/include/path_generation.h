@@ -11,8 +11,6 @@
 #include "kinematics_torque.h"
 #include "matrix.h"
 
-#define POINTS 2
-
 double distance(const matrix *points);
 
 double dist_p_to_p(const matrix *points, uint from, uint to);

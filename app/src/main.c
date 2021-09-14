@@ -7,6 +7,9 @@
 #include "path_generation.h"
 
 
+#define POINTS 2
+
+
 int main(void)
 {
 
