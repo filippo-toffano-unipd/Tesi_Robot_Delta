@@ -1,2 +1,0 @@
-/usr/bin/ar qc libkinematics_torque.a  CMakeFiles/kinematics_torque.dir/src/kinematics_torque.c.o
-/usr/bin/ranlib libkinematics_torque.a

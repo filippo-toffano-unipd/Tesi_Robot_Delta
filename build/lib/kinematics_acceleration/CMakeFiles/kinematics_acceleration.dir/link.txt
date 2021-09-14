@@ -1,2 +1,0 @@
-/usr/bin/ar qc libkinematics_acceleration.a  CMakeFiles/kinematics_acceleration.dir/src/kinematics_acceleration.c.o
-/usr/bin/ranlib libkinematics_acceleration.a

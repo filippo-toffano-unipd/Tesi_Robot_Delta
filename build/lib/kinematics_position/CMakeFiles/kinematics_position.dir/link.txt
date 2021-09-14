@@ -1,2 +1,0 @@
-/usr/bin/ar qc libkinematics_position.a  CMakeFiles/kinematics_position.dir/src/kinematics_position.c.o
-/usr/bin/ranlib libkinematics_position.a
