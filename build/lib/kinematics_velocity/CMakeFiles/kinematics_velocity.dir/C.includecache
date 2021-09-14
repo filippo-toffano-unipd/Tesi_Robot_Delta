@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../lib/kinematics_position/include/kinematics_position.h
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+matrix.h
+../lib/kinematics_position/include/matrix.h
+
+../lib/kinematics_velocity/include/kinematics_velocity.h
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+kinematics_position.h
+../lib/kinematics_velocity/include/kinematics_position.h
+matrix.h
+../lib/kinematics_velocity/include/matrix.h
+
+../lib/matrix/include/matrix.h
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+
+/home/emanuelezanoni/programma_c/lib/kinematics_velocity/src/kinematics_velocity.c
+kinematics_velocity.h
+/home/emanuelezanoni/programma_c/lib/kinematics_velocity/src/kinematics_velocity.h
+

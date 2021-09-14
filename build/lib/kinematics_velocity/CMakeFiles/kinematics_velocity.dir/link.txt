@@ -1,0 +1,2 @@
+/usr/bin/ar qc libkinematics_velocity.a  CMakeFiles/kinematics_velocity.dir/src/kinematics_velocity.c.o
+/usr/bin/ranlib libkinematics_velocity.a

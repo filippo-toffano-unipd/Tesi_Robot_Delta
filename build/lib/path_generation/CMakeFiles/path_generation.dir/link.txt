@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpath_generation.a  CMakeFiles/path_generation.dir/src/path_generation.c.o
+/usr/bin/ranlib libpath_generation.a
