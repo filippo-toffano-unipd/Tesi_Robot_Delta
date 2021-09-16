@@ -29,8 +29,6 @@ void path(const matrix *points, const double time, const double tune_precision, 
 
 void write_data(const matrix *pos, const matrix *vel, const matrix *acc, const double m);
 
-matrix *linear_path(const matrix *start, const matrix *finish, const uint resolution);
-
-matrix *circle_path(const float radius, const float z, const uint resolution);
+void circular_path(const double radius, const double z, const double period, const uint resolution, matrix **pos, matrix **vel, matrix **acc);
 
 #endif

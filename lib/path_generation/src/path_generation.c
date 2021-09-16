@@ -568,28 +568,36 @@ void write_data(const matrix *pos, const matrix *vel, const matrix *acc, const d
 }
 
 
-matrix *linear_path(const matrix *start, const matrix *finish, const uint resolution){
-    matrix *out = new_matrix(3, resolution + 1);
 
-    for (int i = 0; i < 3; i++)
-        for (int j = 0; j <= (int)resolution; j++)
-            *mat_elem(out, i, j) = (*mat_elem(finish, i, 0) - *mat_elem(start, i, 0))*j/resolution + *mat_elem(start, i, 0);
+void circular_path(const double radius, const double z, const double period, const uint resolution, matrix **pos, matrix **vel, matrix **acc){
+    *pos = new_matrix(3, resolution + 1);
+    *vel = new_matrix(3, resolution + 1);
+    *acc = new_matrix(3, resolution + 1);
 
-    return out;
+    matrix *vel_dir = new_matrix(3, 1);
+    matrix *acc_dir = new_matrix(3, 1);
+
+    for (int j = 0; j <= (int)resolution; j++){
+        *mat_elem(*pos, X, j) = radius*cos(2*M_PI*j/resolution);
+        *mat_elem(*pos, Y, j) = radius*sin(2*M_PI*j/resolution);
+        *mat_elem(*pos, Z, j) = z;
+
+        *mat_elem(vel_dir, X, 0) = sin(2*M_PI*j/resolution);
+        *mat_elem(vel_dir, Y, 0) = -cos(2*M_PI*j/resolution);
+
+        *mat_elem(*vel, X, j) = *mat_elem(vel_dir, X, 0)*2*M_PI*radius/period;
+        *mat_elem(*vel, Y, j) = *mat_elem(vel_dir, Y, 0)*2*M_PI*radius/period;
+
+        *mat_elem(acc_dir, X, 0) = -sin(2*M_PI*j/resolution);
+        *mat_elem(acc_dir, Y, 0) = -cos(2*M_PI*j/resolution);
+
+        *mat_elem(*acc, X, j) = *mat_elem(acc_dir, X, 0)*pow(2*M_PI*radius/period, 2)/radius;
+        *mat_elem(*acc, Y, j) = *mat_elem(acc_dir, Y, 0)*pow(2*M_PI*radius/period, 2)/radius;
+    }
+
+    free_matrix(vel_dir);
+    free_matrix(acc_dir);
 }
 
 
-matrix *circle_path(const float radius, const float z, const uint resolution){
-    matrix *out = new_matrix(3, resolution + 1);
-
-    for (int j = 0; j <= (int)resolution; j++)
-            *mat_elem(out, X, j) = radius*cos(2*M_PI*j/resolution);
-
-    for (int j = 0; j <= (int)resolution; j++)
-            *mat_elem(out, Y, j) = radius*sin(2*M_PI*j/resolution);
-
-    for (int j = 0; j <= (int)resolution; j++)
-            *mat_elem(out, Z, j) = z;
-
-    return out;   
-    }
+    
