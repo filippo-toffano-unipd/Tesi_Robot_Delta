@@ -7,7 +7,7 @@ set grid
 set size 0.5, 0.5
 set origin 0, 0.5
 set title 'Position'
-set xlabel 'time [s]'
+set xlabel 'time [s] / total time [s]'
 set ylabel 'motor angle [rad]'
 plot\
     'data/data_q1.dat' w l tit 'q1',\
@@ -17,7 +17,7 @@ plot\
 set size 0.5, 0.5
 set origin 0.5, 0.5
 set title 'Velocity'
-set xlabel 'time [s]'
+set xlabel 'time [s] / total time [s]'
 set ylabel 'motor velocity [rad/s]'
 plot\
     'data/data_q1I.dat' w l tit 'q1',\
@@ -27,7 +27,7 @@ plot\
 set size 0.5, 0.5
 set origin 0.0, 0.0
 set title 'Acceleration'
-set xlabel 'time [s]'
+set xlabel 'time [s] / total time [s]'
 set ylabel 'motor acceleration [rad/s^2]'
 plot\
     'data/data_q1II.dat' w l tit 'q1',\
@@ -37,7 +37,7 @@ plot\
 set size 0.5, 0.5
 set origin 0.5, 0.0
 set title 'Torque'
-set xlabel 'time [s]'
+set xlabel 'time [s] / total time [s]'
 set ylabel 'motor torque [N*m]'
 plot\
     'data/data_torque1.dat' w l tit 'q1',\
@@ -54,7 +54,7 @@ set multiplot layout 2, 2
 set size 0.5, 0.5
 set origin 0, 0.5
 set title 'Position'
-set xlabel 'time [s]'
+set xlabel 'time [s] / total time [s]'
 set ylabel 'position [m]'
 plot\
     'data/data_x.dat' w l tit 'x',\
@@ -64,7 +64,7 @@ plot\
 set size 0.5, 0.5
 set origin 0.0, 0.0
 set title 'Velocity'
-set xlabel 'time [s]'
+set xlabel 'time [s] / total time [s]'
 set ylabel 'velocity [m/s]'
 plot\
     'data/data_xI.dat' w l tit 'x',\
@@ -74,7 +74,7 @@ plot\
 set size 0.5, 0.5
 set origin 0.5, 0.0
 set title 'Acceleration'
-set xlabel 'time [s]'
+set xlabel 'time [s] / total time [s]'
 set ylabel 'acceleration [m/s^2]'
 plot\
     'data/data_xII.dat' w l tit 'x',\
